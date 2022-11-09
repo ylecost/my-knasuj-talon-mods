@@ -169,7 +169,7 @@ symbol_key_words = {
     "equals": "=",
     "plus": "+",
     "tilde": "~",
-    "bang": "!",
+    "ouch": "!",
     "down score": "_",
     "underscore": "_",
     "paren": "(",
