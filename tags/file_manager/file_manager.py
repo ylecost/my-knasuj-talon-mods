@@ -341,10 +341,12 @@ def update_lists(path=None):
             directories = get_directory_map(current_path)
             files = get_file_map(current_path)
         except:
-            # print("invalid path...")
+            print("invalid path...")
 
             directories = {}
             files = {}
+    else:
+        print("Not a valid path!")
 
     current_folder_page = current_file_page = 1
     ctx.lists["self.file_manager_directories"] = directories
@@ -354,7 +356,6 @@ def update_lists(path=None):
     folder_selections.sort(key=str.casefold)
     file_selections = list(set(files.values()))
     file_selections.sort(key=str.casefold)
-
     update_gui()
 
 
