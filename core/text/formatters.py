@@ -97,6 +97,7 @@ def every_word(word_func):
 formatters_dict = {
     "NOOP": (SEP, lambda i, word, _: word),
     "DOUBLE_UNDERSCORE": (NOSEP, first_vs_rest(lambda w: f"__{w}__")),
+    "SINGLE_UNDERSCORE": words_with_joiner("_"),
     "PRIVATE_CAMEL_CASE": (
         NOSEP,
         first_vs_rest(lambda w: w.lower(), lambda w: w.capitalize()),
@@ -142,6 +143,7 @@ formatters_words = {
     "dotted": formatters_dict["DOT_SEPARATED"],
     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
     "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
+    "sunder": formatters_dict["SINGLE_UNDERSCORE"],
     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
